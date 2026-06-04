@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+backend/venv/
+.pytest_cache/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+*.local
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Build artifacts / archives
+frontend.zip
+
+# NOTE: ml/model/ is intentionally NOT ignored.
+# The trained model + artifacts (~35 MB) must be committed so Railway can serve
+# them. The large raw training CSV under ml/data/ is the only ML file to skip:
+ml/data/*.csv

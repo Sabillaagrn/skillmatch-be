@@ -1,0 +1,36 @@
+skill_code,skill_name
+ACCT,Accounting
+ADM,Administration
+ADVR,Advertising
+ANLS,Analysis & Analytics
+ART,Arts & Design
+BD,Business Development
+CNSL,Consulting
+CUST,Customer Service
+DIST,Distribution & Logistics
+DSGN,Design (UI/UX/Graphic)
+EDU,Education & Training
+ENG,Engineering (Software/Hardware)
+FIN,Finance
+GENB,General Business
+HCPR,Healthcare & Pharma
+HR,Human Resources
+IT,Information Technology
+LGL,Legal
+MGMT,Management
+MNFC,Manufacturing
+MRKT,Marketing
+OTHR,Other
+PR,Public Relations
+PRCH,Purchasing & Procurement
+PRDM,Product Management
+PRJM,Project Management
+PROD,Production
+QA,Quality Assurance
+RSCH,Research
+SALE,Sales
+SCI,Science
+STRA,Strategy & Planning
+SUPL,Supply Chain
+TRNG,Training & Development
+WRT,Writing & Content

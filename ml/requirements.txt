@@ -1,0 +1,7 @@
+# ML layer dependencies (also a subset of the backend's requirements).
+# Pin TF to the family the model was trained/saved with (Keras 3 / TF 2.x).
+tensorflow==2.21.0
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.3   # needed to unpickle mlb.pkl (MultiLabelBinarizer)
+h5py>=3.10

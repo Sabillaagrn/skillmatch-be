@@ -1,0 +1,9 @@
+# Minimal deps to run the API in MOCK mode (no TensorFlow).
+# Use this for fast local UI/integration testing:
+#   pip install -r backend/requirements-mock.txt
+#   SKILLMATCH_MOCK=true uvicorn backend.app.main:app --reload --port 8000
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+numpy>=1.26,<2.0
+scikit-learn>=1.3
