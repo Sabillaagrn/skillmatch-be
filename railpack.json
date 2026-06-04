@@ -1,5 +1,0 @@
-{
-  "$schema": "https://schema.railpack.com",
-  "provider": "python",
-  "installCmd": "pip install --no-cache-dir -r backend/requirements.txt"
-}
