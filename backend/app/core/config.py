@@ -5,8 +5,19 @@ import os
 import sys
 from pathlib import Path
 
-# Repo root = .../skill-match  (backend/ and ml/ are siblings).
-REPO_ROOT = Path(__file__).resolve().parents[3]
+# Locate the repo root = the directory that contains the `ml/` package.
+# We walk up from this file instead of hardcoding parents[N], so the import
+# works whether the backend sits at the repo root (app/...) or one level deep
+# (backend/app/...). Falls back to the original assumption if not found.
+def _find_repo_root() -> Path:
+    here = Path(__file__).resolve()
+    for parent in here.parents:
+        if (parent / "ml").is_dir():
+            return parent
+    return here.parents[3]
+
+
+REPO_ROOT = _find_repo_root()
 
 # Make the `ml` package importable so the backend reuses the inference pipeline
 # instead of duplicating it.
