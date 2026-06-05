@@ -3,16 +3,9 @@ uvicorn[standard]>=0.30
 pydantic>=2.7
 
 # --- ML / inference -------------------------------------------------------
-# TensorFlow ships different wheels per platform:
-#   * Linux (Railway/CI): tensorflow-cpu is smaller (no CUDA).
-#   * macOS / Windows: there is NO `tensorflow-cpu` wheel — use `tensorflow`.
-# The markers below pick the right one automatically.
 
 tensorflow-cpu==2.21.0; sys_platform == "linux"
 tensorflow==2.21.0; sys_platform != "linux"
-
-# The saved model was exported with Keras 3.13.2. Keras 3.13+ is required to
-# deserialize the .keras archive.
 
 keras>=3.13,<4
 
@@ -20,3 +13,9 @@ numpy>=1.26,<3.0
 pandas>=2.0
 scikit-learn>=1.3
 h5py>=3.10
+
+# Environment variables
+python-dotenv>=1.0
+
+# Supabase client
+supabase>=2.0
