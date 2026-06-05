@@ -10,13 +10,17 @@ from ..core.config import settings
 from ..core import skills as sk
 from ..schemas import models as m
 from ..services import matching, recommend
+from typing import Optional
 
 # Inisialisasi Supabase
 # Pastikan settings.SUPABASE_URL dan KEY sudah terisi (cek config.py)
-supabase: Client = create_client(
-    settings.SUPABASE_URL,
-    settings.SUPABASE_KEY
-)
+supabase: Optional[Client] = None
+
+if settings.SUPABASE_URL and settings.SUPABASE_KEY:
+    supabase = create_client(
+        settings.SUPABASE_URL,
+        settings.SUPABASE_KEY
+    )
 
 # Imported via REPO_ROOT on sys.path
 from ml.src import inference
