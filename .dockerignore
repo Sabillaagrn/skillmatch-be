@@ -1,0 +1,16 @@
+# Keep the build context small and the backend image clean.
+**/venv
+**/.venv
+**/node_modules
+**/__pycache__
+**/*.pyc
+frontend
+ml/data
+ml/notebooks
+ml/artifacts
+*.zip
+.git
+.github
+.vscode
+.claude
+*.md
