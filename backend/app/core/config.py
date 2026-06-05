@@ -36,14 +36,19 @@ if str(REPO_ROOT) not in sys.path:
 
 class Settings:
     # CORS
+
+    print("CORS ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
+
     ALLOWED_ORIGINS: list[str] = [
-        o.strip()
-        for o in os.getenv(
-            "ALLOWED_ORIGINS",
-            "http://localhost:5173"
-        ).split(",")
-        if o.strip()
-    ]
+    o.strip()
+    for o in os.getenv(
+        "ALLOWED_ORIGINS",
+        "http://localhost:5173,https://skill-match-fe-two.vercel.app"
+    ).split(",")
+    if o.strip()
+]
+
+print("CORS ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
 
     # Supabase
     SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
