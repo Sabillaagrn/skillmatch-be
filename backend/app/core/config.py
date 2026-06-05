@@ -36,20 +36,17 @@ if str(REPO_ROOT) not in sys.path:
 
 class Settings:
     # CORS
-
-    print("CORS ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
-
     ALLOWED_ORIGINS: list[str] = [
-    o.strip()
-    for o in os.getenv(
-        "ALLOWED_ORIGINS",
-        "http://localhost:5173,https://skill-match-fe-two.vercel.app"
-    ).split(",")
-    if o.strip()
-]
+        o.strip()
+        for o in os.getenv(
+            "ALLOWED_ORIGINS",
+            "http://localhost:5173,https://skill-match-fe-two.vercel.app"
+        ).split(",")
+        if o.strip()
+    ]
 
-print("CORS ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
-
+    # DEBUG (taruh di luar class nanti kalau mau)
+    
     # Supabase
     SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
     SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
@@ -70,9 +67,7 @@ print("CORS ALLOWED_ORIGINS:", ALLOWED_ORIGINS)
 
     # Model load setting
     EAGER_MODEL_LOAD: bool = (
-        os.getenv("EAGER_MODEL_LOAD", "true")
-        .lower() == "true"
+        os.getenv("EAGER_MODEL_LOAD", "true").lower() == "true"
     )
-
 
 settings = Settings()
