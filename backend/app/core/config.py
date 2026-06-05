@@ -21,6 +21,11 @@ def _find_repo_root() -> Path:
 
 REPO_ROOT = _find_repo_root()
 
+# backend/.env
+ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
+
+load_dotenv(ENV_PATH)
+
 # Load .env from repo root
 load_dotenv(REPO_ROOT / ".env")
 
